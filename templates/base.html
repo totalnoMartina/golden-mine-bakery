@@ -34,28 +34,25 @@
 
 <body>
 
-    <nav class="navbar-toggle navbar-light bg-success mx-auto my-0 p-1">
-        <div class="text-start">
-            <span class="navbar-text text-white">
-                Contact Number : +35383567555</span></div>
+    <nav class="navbar-toggle navbar-light bg-success mx-auto p-2 my-auto">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand text-white ml" href="#"> Paris Bakery - Menu</a>
+        <a class="navbar-brand text-white backg" href="#"> Paris Bakery - Menu</a>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mx-auto mt-2 mt-lg-2">
                 <li class="nav-item active">
                     <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="#">Order Here</a>
+                    <a class="nav-link text-white backg" href="#">Order Here</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="#">Prices & Gallery</a>
+                    <a class="nav-link text-white backg" href="#">Prices & Gallery</a>
                 </li>
 
-                <div class="dropdown my-2 my-lg-0">
-                    <button class="btn btn-secondary dropdown-toggle bg-transparent text-white border-none" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle bg-transparent text-white border-none backg rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         My Profile
                     </button>
                     <div class="dropdown-menu bg-success" aria-labelledby="dropdownMenuButton">
@@ -73,16 +70,6 @@
                 </div>
             </ul>
     </nav>
-
-
-
-
-
-
-
-
-
-
 
     {% if messages %}
     <div class="message-container"></div>
@@ -110,9 +97,12 @@
     </script>
     {% endblock %}
 
-    <footer class="container">
+    <footer class="container fixed-bottom">
+
+        <span class="text-success">
+            Contact Number : +35383567555</span>
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>© 2017-2019 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        <p>© 2021-2022 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
     </footer>
 </body>
 

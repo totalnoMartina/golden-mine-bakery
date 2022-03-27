@@ -2,8 +2,6 @@ body {
     width: 100%;
     background: url('/media/images/bakery_p.jpg') center center fixed;
     background-size: cover;
-    color: steelblue;
-    background-color: rgb(150, 44, 6);
     font-family: 'Playfair Display', serif;
 }
 
@@ -27,7 +25,7 @@ body {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 80px;
     }
 }
 
