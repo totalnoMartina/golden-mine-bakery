@@ -1,7 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
 {% block content%}
 
-<h1 class="display-4 text-success"> It's working</h1>
+<div class="container h-100 w-100">
+    <div class="row h-100 w-100">
+        <div class="col-3 col-md-2 mx-auto">
+            <h1 class="text-black font-weight-bold">Fresh Bread Daily - Wholesale only</h1>
+            <div class="my-4">
+                <h2>Delivered to your shop
+                    <a href="" class="btn btn-dark rounded-0"></a>
+                </h2>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 {% endblock %}
