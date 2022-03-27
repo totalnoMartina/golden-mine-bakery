@@ -1,0 +1,39 @@
+body {
+    width: 100%;
+    background: url('/media/images/bakery_p.jpg') center center fixed;
+    background-size: cover;
+    color: steelblue;
+    background-color: rgb(150, 44, 6);
+    font-family: 'Playfair Display', serif;
+}
+
+.backg {
+    color: rgb(247, 238, 238);
+}
+
+.backg:hover {
+    background-color: unset !important;
+    color: black !important;
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 950px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .header-container {
+        padding-top: 164px;
+    }
+}
