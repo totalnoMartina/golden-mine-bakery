@@ -35,43 +35,44 @@
 </head>
 
 <body>
-    <nav class="navbar-toggle navbar-light bg-success mx-auto p-2 my-auto">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand text-white backg" href="#"> Paris Bakery - Menu</a>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mx-auto mt-2 mt-lg-2">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white backg" href="#">Order Here</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white backg" href="#">Prices & Gallery</a>
-                </li>
+    <header class="container-fluid p-0 sticky-top">
+        <nav class="navbar-toggle navbar-light bg-success p-2 rounded-bottom">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand text-white backg" href="{% url 'mainapp' %}"> Paris Bakery - Menu</a>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mt-2 mt-lg-2">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white backg" href="#">Order Here</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white backg" href="#">Prices & Gallery</a>
+                    </li>
 
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle bg-transparent text-white border-none backg rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        My Profile
-                    </button>
-                    <div class="dropdown-menu bg-success" aria-labelledby="dropdownMenuButton">
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                        <a class="dropdown-item text-white" href="#">Product Management</a>
-                        {% endif %}
-                        <a class="dropdown-item text-white" href="#">My Profile</a>
-                        <a class="dropdown-item text-white" href="{% url 'account_logout' %}">Logout</a>
-                        {% else %}
-                        <a href="{% url 'account_signup' %}" class="dropdown-item text-white backg">SignUp</a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item text-white backg">Login</a>
-                        {% endif %}
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle bg-transparent text-white border-none backg rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            My Profile
+                        </button>
+                        <div class="dropdown-menu bg-success" aria-labelledby="dropdownMenuButton">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a class="dropdown-item text-white" href="#">Product Management</a>
+                            {% endif %}
+                            <a class="dropdown-item text-white" href="#">My Profile</a>
+                            <a class="dropdown-item text-white" href="{% url 'account_logout' %}">Logout</a>
+                            {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item text-white backg">SignUp</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item text-white backg">Login</a>
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
-            </ul>
-    </nav>
-
+                </ul>
+        </nav>
+    </header>
     {% if messages %}
     <div class="message-container"></div>
     {% endif %}
@@ -98,9 +99,9 @@
     </script>
     {% endblock %}
 
-    <footer class="container fixed-bottom">
+    <footer class="container-fluid fixed-bottom bg-white smooth-scroll">
 
-        <span class="text-success">
+        <span class="text-black">
             Contact Number : +35383567555</span>
         <p class="float-right"><a href="#">Back to top</a></p>
         <p>© 2021-2022 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
