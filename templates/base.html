@@ -76,8 +76,8 @@
                             <div class="text-left">
                                 <div><i class="fas fa-shopping-bag fa-lg backg"></i></div>
                                 <p class="my-auto">
-                                    {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
+                                    {% if grand_tot %}
+                                    ${{ grand_tot|floatformat:2 }}
                                     {% else %}
                                     $0.00
                                     {% endif %}
@@ -85,9 +85,14 @@
                             </div>
                         </a>
                     </li>
-
                 </ul>
         </nav>
+        <div id="delivery-banner" class="row text-center">
+            <div class="col text-black">
+                <h5 class="logo-font my-1">
+                    With a delivery for only {{ delivery|floatformat:2 }} percent of your order anywhere in Dublin area!</h5>
+            </div>
+        </div>
     </header>
     {% if messages %}
     <div class="message-container"></div>
@@ -119,7 +124,7 @@
 
         <span class="text-black">
             Contact Number : +35383567555</span>
-        <p class="float-right"><a href="#">Back to top</a></p>
+        <p class="float-right text-black"><a href="#">Back to top</a></p>
         <p>© 2021-2022 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
     </footer>
 </body>
