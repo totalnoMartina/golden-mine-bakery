@@ -15,7 +15,6 @@ def product_info(request, product_id):
     """ Rendering detailed information on the product """
     product = get_object_or_404(Product, pk=product_id)
     context = {
-        'product': product
+        'product': product,
     }
-
     return render(request, 'products/product_info.html', context)
