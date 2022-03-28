@@ -41,7 +41,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand text-white backg" href="{% url 'mainapp' %}"> Paris Bakery - Menu</a>
+            <a class="navbar-brand text-white backg" href="{% url 'mainapp' %}"> Paris Bakery - Wholesales Menu</a>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mt-2 mt-lg-2">
                     <li class="nav-item active">
@@ -61,10 +61,10 @@
                         <div class="dropdown-menu bg-success" aria-labelledby="dropdownMenuButton">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <a class="dropdown-item text-white" href="#">Product Management</a>
+                            <a class="dropdown-item text-white backg" href="#">Product Management</a>
                             {% endif %}
-                            <a class="dropdown-item text-white" href="#">My Profile</a>
-                            <a class="dropdown-item text-white" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="dropdown-item text-white backg" href="#">My Profile</a>
+                            <a class="dropdown-item text-white backg" href="{% url 'account_logout' %}">Logout</a>
                             {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item text-white backg">SignUp</a>
                             <a href="{% url 'account_login' %}" class="dropdown-item text-white backg">Login</a>
