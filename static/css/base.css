@@ -29,6 +29,53 @@ body {
     z-index: -1;
 }
 
+
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+
+
+.text-black {
+    color: #000 !important;
+}
+
+.gradient {
+    background: linear-gradient(0.50turn, #b3e78b, #11a03c) !important;
+    ;
+}
+
 /* Media Queries */
 /* fixed top navbar only on medium and up */
 @media (min-width: 950px) {
