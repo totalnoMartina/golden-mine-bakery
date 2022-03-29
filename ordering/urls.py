@@ -1,3 +1,4 @@
+""" Path module to render views through url patterns list """
 from django.urls import path
 from . import views
 
@@ -6,4 +7,4 @@ urlpatterns = [
     path('add/<item_id>/', views.add_an_order, name='add_an_order'),
     path('adjust/<item_id>/', views.adjust_order, name='adjust_order'),
     path('remove/<item_id>/', views.remove_from_order, name='remove_from_order'),
-] 
+]

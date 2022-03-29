@@ -52,7 +52,7 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/order/remove/${itemId}`;
+        var url = `/order/remove/${itemId}/`;
         var data = {
             'csrfmiddlewaretoken': csrfToken,
         };
