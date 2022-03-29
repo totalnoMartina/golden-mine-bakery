@@ -22,9 +22,9 @@
 
     <div class="row">
         <div class="col">
-            {% if order_items %}
+            {% if ordered_items %}
             <div class="table-responsive rounded">
-                {{ order_items }}
+                {{ ordered_items }}
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
                         <tr>
@@ -36,7 +36,7 @@
                         </tr>
                     </thead>
 
-                    {% for item in order_items %}
+                    {% for item in ordered_items %}
                     <tr>
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
@@ -50,15 +50,15 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-sm btn-black rounded-0" data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                            <button class="decrement-qty btn btn-sm btn-black rounded-0" data-ordered_item_id="{{ item.ordered_item_id }}" id="decrement-qty_{{ item.ordered_item_id }}">
                                                 <span>
                                                     <i class="fas fa-minus fa-sm"></i>
                                                 </span>
                                             </button>
                                         </div>
-                                        <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                        <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-ordered_item_id="{{ item.ordered_item_id }}" id="id_qty_{{ item.ordered_item_id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn btn-sm btn-black rounded-0" data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                            <button class="increment-qty btn btn-sm btn-black rounded-0" data-item_id="{{ item.ordered_item_id }}" id="increment-qty_{{ item.ordered_item_id }}">
                                                 <span>
                                                     <i class="fas fa-plus fa-sm"></i>
                                                 </span>
@@ -68,7 +68,7 @@
                                 </div>
                             </form>
                             <a class="update-link text-info"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.ordered_item_id }}"><small>Remove</small></a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">${{ item.product.price }}</p>
@@ -77,22 +77,22 @@
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
-                            <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                            <h6>Delivery:euros ${{ delivery|floatformat:2 }}</h6>
-                            <h4 class="mt-4"><strong>Grand Total: ${{ grand_tot|floatformat:2 }}</strong></h4>
+                            <h6><strong>Order Total: €{{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery:euros €{{ delivery|floatformat:2 }}</h6>
+                            <h4 class="mt-4"><strong>Final Total: €{{ grand_tot|floatformat:2 }}</strong></h4>
 
                         </td>
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <a href="{% url 'products' %}" class="btn backg rounded-circle gradient btn-lg">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
-                                <span class="text-uppercase">Keep Ordering</span>
+                                <span>Keep Ordering</span>
                             </a>
-                            <a href="" class="btn btn-black rounded-0 btn-lg">
-                                <span class="text-uppercase">Secure Checkout</span>
+                            <a href="" class="btn backg rounded-circle gradient btn-lg">
+                                <span>Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>
                                 </span>
@@ -103,11 +103,11 @@
             </div>
             {% else %}
             <p class="lead mb-5">You haven't placed your order yet</p>
-            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+            <a href="{% url 'products' %}" class="btn backg gradient rounded-circle btn-lg">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>
-                <span class="text-uppercase">Keep Ordering</span>
+                <span>Back to Order</span>
             </a>
             {% endif %}
         </div>

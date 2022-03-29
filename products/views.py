@@ -17,4 +17,4 @@ def product_info(request, product_id):
     context = {
         'product': product,
     }
-    return render(request, 'products/product_info.html', context)
+    return render(request, 'products/product_infos.html', context)

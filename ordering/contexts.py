@@ -13,12 +13,12 @@ def order_items(request):
     grand_tot = delivery_included_price + total
     order = request.session.get('order', {})
 
-    for item_id, quantity in order.items():
+    for ordered_item_id, quantity in order.items():
         product = get_object_or_404(Product, pk=product_id)
         total += quantity * product.price
         product_count += quantity
         ordered_items.append({
-            'item_id': item_id,
+            'ordered_item_id': ordered_item_id,
             'quantity': quantity,
             'product': product
         })
