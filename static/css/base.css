@@ -89,15 +89,3 @@ body {
         padding-top: 80px;
     }
 }
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    .header-container {
-        border-top: 5px;
-        padding-top: 120px;
-    }
-
-    body {
-        height: calc(100vh - 120px);
-    }
-}
