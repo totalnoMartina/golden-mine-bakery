@@ -6,17 +6,17 @@ def view_order(request):
     return render(request, 'ordering/order.html')
 
 
-def add_an_order(request, ordered_item_id):
+def add_an_order(request, item_id):
     """ Add a quantity of the specified product to the order """
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     order = request.session.get('order', {})
 
-    if ordered_item_id in list(order.keys()):
-        order[ordered_item_id] += quantity
+    if item_id in list(order.keys()):
+        order[item_id] += quantity
     else:
-        order[ordered_item_id] = quantity
+        order[item_id] = quantity
 
     request.session['order'] = order
     print(request.session['order'])

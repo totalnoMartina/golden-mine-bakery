@@ -13,7 +13,6 @@ def order_items(request):
     grand_tot = delivery_included_price + total
     order = request.session.get('order', {})
 
-
     for item_id, item_data in order.items():
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
@@ -25,7 +24,6 @@ def order_items(request):
                 'product': product,
             })
 
-
     context = {
         'ordered_items': ordered_items,
         'total': total,
@@ -34,5 +32,4 @@ def order_items(request):
         'delivery_included_price': delivery_included_price,
         'grand_tot': grand_tot
     }
-
     return context
