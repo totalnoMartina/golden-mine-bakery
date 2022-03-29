@@ -29,7 +29,6 @@ body {
     z-index: -1;
 }
 
-
 .shop-now-button {
     background: black;
     color: white;
@@ -72,6 +71,12 @@ body {
 .gradient {
     background: linear-gradient(0.50turn, #b3e78b, #11a03c) !important;
     ;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
 }
 
 /* Media Queries */

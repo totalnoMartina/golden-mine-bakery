@@ -3,8 +3,9 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+
 def order_items(request):
-    """ A context process to calculate the price of the ordered items + delivery """
+    """ A function to calculate the price of the ordered items + delivery """
     ordered_items = []
     total = 0
     product_count = 0

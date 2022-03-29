@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load calculating_subtotal %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -70,9 +71,7 @@
                                                 </span>
                                             </button>
                                         </div>
-                                        {% if item.product.has_sizes %}
-                                        <input type="hidden" name="product_size" value="{{ item.size }}">
-                                        {% endif %}
+
                                     </div>
                                 </div>
                             </form>
@@ -82,7 +81,7 @@
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
                             <h6><strong>Order Total: €{{ total|floatformat:2 }}</strong></h6>
-                            <h6>Delivery:euros €{{ delivery }}</h6>
+                            <h6>Delivery:euros €{{ delivery|floatformat:2 }}</h6>
                             <h4 class="mt-4"><strong>Final Total: €{{ grand_tot|floatformat:2 }}</strong></h4>
 
                         </td>
@@ -122,4 +121,28 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/targeting_quantity.html' %}
+
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/order/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+        };
+
+        $.post(url, data)
+            .done(function() {
+                location.reload();
+            });
+    })
+</script>
 {% endblock %}
