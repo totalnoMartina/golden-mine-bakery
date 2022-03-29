@@ -74,15 +74,16 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %} font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_order' %}">
                             <div class="text-left">
-                                <div><i class="fas fa-shopping-bag fa-lg backg">
+                                <div>
+                                    <i class="fas fa-shopping-bag fa-lg backg">
                                     </i>
                                     <i class="fas fa-light fa-baguette"></i>
                                 </div>
                                 <p class="my-auto">
                                     {% if grand_tot %}
-                                    ${{ grand_tot|floatformat:2 }}
+                                    €{{ grand_tot|floatformat:2 }}
                                     {% else %}
-                                    $0.00
+                                    €0.00
                                     {% endif %}
                                 </p>
                             </div>
@@ -124,11 +125,10 @@
     {% endblock %}
 
     <footer class="container-fluid fixed-bottom gradient smooth-scroll">
-
         <span class="text-black">
             Contact Number : +35383567555</span>
         <p class="float-right"><a href="#">Back to top</i></a></p>
-        <p>© 2021-2022 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        <p>© 2021-2022 Company, Inc. · <a href="mailto:martina01061987@gmail.com" target="_blank" class="backg display-5">Contact us by Email Here</a> · <a href="#">Terms</a></p>
     </footer>
 </body>
 

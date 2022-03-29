@@ -25,6 +25,7 @@ def order_items(request):
                 'product': product,
             })
 
+
     context = {
         'ordered_items': ordered_items,
         'total': total,
