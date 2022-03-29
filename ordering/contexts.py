@@ -13,15 +13,17 @@ def order_items(request):
     grand_tot = delivery_included_price + total
     order = request.session.get('order', {})
 
-    for ordered_item_id, quantity in order.items():
-        product = get_object_or_404(Product, pk=product_id)
-        total += quantity * product.price
-        product_count += quantity
-        ordered_items.append({
-            'ordered_item_id': ordered_item_id,
-            'quantity': quantity,
-            'product': product
-        })
+
+    for item_id, item_data in order.items():
+        if isinstance(item_data, int):
+            product = get_object_or_404(Product, pk=item_id)
+            total += item_data * product.price
+            product_count += item_data
+            ordered_items.append({
+                'item_id': item_id,
+                'quantity': item_data,
+                'product': product,
+            })
 
     context = {
         'ordered_items': ordered_items,
